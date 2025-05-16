@@ -29,7 +29,7 @@ A estrutura documental do projeto é baseada em uma hierarquia de diretórios, o
   - [1.2. Elicitação e Análise de Requisitos](/Base/1.2.ElicitacaoAnaliseRequisitos)
 - **2. Planejamento e Definição do Escopo**
   - 2.1 Escopo do Projeto
-  - 2.2 Cronograma e Recursos
+  - [2.2 Cronograma e Recursos](/Planejamento/1.1Cronograma.md)
 - **3. Modelagem**
   - **3.1 Dinâmicos**
     - [3.1.1 Diagrama de Atividades](/Modelagem/Dinâmicos/1.1.DiagramaDeAtividades.md)
