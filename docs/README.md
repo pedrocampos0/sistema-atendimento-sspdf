@@ -4,12 +4,12 @@
 **Número do Grupo**: 08<br>
 
 ## Alunos
-|Matrícula | Aluno |
-| -- | -- |
-| UC25100676  |  Pedro Campos Borges |
-| UC23200427  |  Gustavo Nunes Silva |
-| UC23200597  |  Moises M X S De Paula |
-| uc22201129  |  Renan Augusto Barbosa Inacio da Silva |
+| Matrícula   | Aluno                                 |
+|-------------|---------------------------------------|
+| UC25100676  | Pedro Campos Borges                   |
+| UC23200427  | Gustavo Nunes Silva                   |
+| UC23200597  | Moises M X S De Paula                 |
+| UC22201129  | Renan Augusto Barbosa Inacio da Silva |
 
 ## Sobre 
 Esse projeto faz parte da matéria de <strong>NOVAS TECNOLOGIAS</strong> e visa resolver um problema real de uma secretaria do DF.
