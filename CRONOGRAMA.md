@@ -71,11 +71,11 @@ A comunicação da equipe será feita por meio de plataformas como WhatsApp, Dis
 
 | Item                        | Descrição                               |
 | --------------------------- | --------------------------------------- |
-| Linguagem Backend           | Java com Spring Boot                    |
-| Linguagem Frontend          | HTML, CSS, JavaScript                   |
+| Linguagem Backend           | Pyton com Flask                         |
+| Linguagem Frontend          | REACTS.JS + VITE                        |
 | Banco de Dados              | PostgreSQL ou MySQL                     |
 | Ferramentas de Modelagem    | Lucidchart, Draw\.io, StarUML           |
 | Ferramentas de Prototipagem | Figma, Adobe XD                         |
 | Controle de Versão          | Git + GitHub                            |
-| IDEs                        | VS Code, IntelliJ                       |
+| IDEs                        | VS Code, IntelliJ, PyCham               |
 | Comunicação da Equipe       | WhatsApp, Discord, Google Drive, Trello |
