@@ -9,7 +9,8 @@
 | UC25100676  | Pedro Campos Borges                   |
 | UC23200427  | Gustavo Nunes Silva                   |
 | UC23200597  | Moises M X S De Paula                 |
-| UC22201129  | Renan Augusto Barbosa Inacio da Silva |
+| UC23201116  | Renan Augusto Barbosa Inacio da Silva |
+| UC22201129 | Rafael Rodrigues Martins |
 
 ## Sobre 
 Esse projeto faz parte da matéria de <strong>NOVAS TECNOLOGIAS</strong> e visa resolver um problema real de uma secretaria do DF.
