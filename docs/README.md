@@ -15,12 +15,6 @@
 Esse projeto faz parte da matéria de <strong>NOVAS TECNOLOGIAS</strong> e visa resolver um problema real de uma secretaria do DF.
 A [Secretaria de Segurança Pública do Distrito Federal (SSPDF)](https://www.ssp.df.gov.br) foi a escolhida como foco para o projeto
 
-## Screenshots Primeira Entrega
-...
-
-## Screenshots Segunda Entrega
-...
-
 ## 📁 Estrutura do Projeto
 
 A estrutura documental do projeto é baseada em uma hierarquia de diretórios, onde cada diretório representa um módulo ou seção do projeto. Abaixo está a estrutura básica:
