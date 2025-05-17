@@ -23,6 +23,24 @@
       color: #90caf9;
     }
 
+    body.dark-mode table {
+      background-color: #000;
+      color: #fff;
+      border-collapse: collapse;
+    }
+
+    body.dark-mode th,
+    body.dark-mode td {
+      background-color: #000;
+      color: #fff;
+      border: 1px solid #444;
+    }
+
+    body.dark-mode tr:nth-child(even),
+    body.dark-mode tr:nth-child(odd) {
+      background-color: #000 !important;
+    }
+
     .app-name img {
       height: 200px;
     }
@@ -51,7 +69,6 @@
       localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
     }
 
-    // Aplica o modo escuro automaticamente se já estiver ativado
     if (localStorage.getItem('dark-mode') === 'true') {
       document.body.classList.add('dark-mode');
     }
