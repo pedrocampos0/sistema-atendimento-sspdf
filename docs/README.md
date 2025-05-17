@@ -26,7 +26,7 @@ A estrutura documental do projeto é baseada em uma hierarquia de diretórios, o
   - [1.1. Entendimento do Problema](/Base/1.1.EntendimentoDoProblema)
   - [1.2. Elicitação e Análise de Requisitos](/Base/1.2.ElicitacaoAnaliseRequisitos)
 - **2. Planejamento e Definição do Escopo**
-  - 2.1 Escopo do Projeto
+  - [2.1 Escopo do Projeto](Planejamento/1.1.Escopo)
   - [2.2 Cronograma e Recursos](Planejamento/1.2.Cronograma)
 - **3. Modelagem**
 - - **3.1 Arquitetura**
