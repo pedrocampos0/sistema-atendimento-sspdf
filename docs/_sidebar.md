@@ -8,7 +8,7 @@
 
 - **2. Planejamento e Definição do Escopo**
   - [2.1 Escopo do Projeto](/Planejamento/1.1.Escopo.md)
-  - [2.2 Cronograma e Recursos](/Planejamento/2.2.CronogramaERecursos.md)
+  - [2.2 Cronograma e Recursos](/Planejamento/1.2.Cronograma.md)
 
 - **3. Modelagem**
   - **3.1 Arquitetura**
