@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
@@ -10,16 +10,52 @@
   <link rel="icon" type="image/x-icon" href="/Assets/logo.png">
 
   <style>
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .sidebar {
+      background-color: #1e1e1e;
+    }
+
+    body.dark-mode a {
+      color: #90caf9;
+    }
+
     .app-name img {
-      height: 200px; /* ajuste o valor como quiser */
+      height: 200px;
+    }
+
+    .dark-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #444;
+      color: #fff;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      z-index: 1000;
     }
   </style>
 </head>
 <body>
-  <!-- Docsify content -->
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Modo Escuro</button>
   <div id="app"></div>
 
   <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
+    }
+
+    // Aplica o modo escuro automaticamente se já estiver ativado
+    if (localStorage.getItem('dark-mode') === 'true') {
+      document.body.classList.add('dark-mode');
+    }
+
     window.$docsify = {
       loadSidebar: true,
       name: 'Sistema de Atendimento a Denúncias Anônimas - Secretaria de Segurança Pública do Distrito Federal',
