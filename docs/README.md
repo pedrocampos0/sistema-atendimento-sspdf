@@ -39,7 +39,7 @@ A estrutura documental do projeto é baseada em uma hierarquia de diretórios, o
 
 <a href="denunciaanonimasystem.html" target="_blank" style="text-decoration: none;">
   <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
-    Acessar Protótipo do Sistema de Denúncia Anônimas - S.A.D.A
+    Acessar Protótipo do Sistema de Atendimento a Denúncias Anônimas - S.A.D.A
   </button>
 </a>
 
