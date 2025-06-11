@@ -4,11 +4,13 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import ProTip from './ProTip';
 import Copyright from './Copyright';
+import HomePage from './pages/HomePage';
 
 export default function App() {
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
+    <Container maxWidth="false" disableGutters>
+      <Box sx={{ my: 0 }}>
+        <HomePage />
       </Box>
     </Container>
   );
