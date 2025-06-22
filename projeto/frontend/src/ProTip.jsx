@@ -17,7 +17,7 @@ export default function ProTip() {
       <LightBulbIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
       {'Pro tip: See more '}
       <Link href="https://mui.com/material-ui/getting-started/templates/">templates</Link>
-      {' in the Material UI documentation.'}
+      {' in the Material UI documentation.'}
     </Typography>
   );
 }

@@ -9,11 +9,13 @@ export default function Copyright() {
       align="center"
       sx={{
         color: 'text.secondary',
+        mt: 8, // Added margin top for better spacing
+        mb: 4, // Added margin bottom for better spacing
       }}
     >
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        SADA
       </Link>{' '}
       {new Date().getFullYear()}.
     </Typography>
