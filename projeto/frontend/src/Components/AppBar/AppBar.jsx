@@ -11,35 +11,34 @@ import { Link } from 'react-router-dom';
 export default function DenseAppBar() {
   return (
     <>
-      <AppBar position="fixed" sx={{ backgroundColor: "#222222" }}>
+      <AppBar position="fixed" sx={{ backgroundColor: "#1e1e1e" }}>
         <Toolbar
           sx={{
             height: "100px",
             display: 'flex',
             justifyContent: 'space-between',
-            px: 4, // padding horizontal (left and right)
+            px: 4,
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" color="inherit" component="div">
+            <Typography variant="h6" color="inherit" component="div" sx={{ fontSize: '1rem' }}>
               SADA - Sistema de Atendimento a Denúncias Anônimas
             </Typography>
           </Box>
-          
+
           <Box sx={{ display: 'flex', gap: 2 }}>
-            <Button color="inherit" component={Link} to="/">Início</Button>
-            <Button color="inherit" component={Link} to="/fazer-denuncia">Fazer Denúncia</Button>
-            <Button color="inherit" component={Link} to="/acompanhar-denuncia">Acompanhar Denúncia</Button>
-            <Button color="inherit" component={Link} to="/sobre">Sobre</Button>
-            <Button color="inherit" component={Link} to="/estatisticas">Estatísticas</Button>
+            <Button color="inherit" component={Link} to="/" sx={{ fontSize: '0.85rem' }}>Início</Button> 
+            <Button color="inherit" component={Link} to="/fazer-denuncia" sx={{ fontSize: '0.85rem' }}>Fazer Denúncia</Button> 
+            <Button color="inherit" component={Link} to="/acompanhar-denuncia" sx={{ fontSize: '0.85rem' }}>Acompanhar Denúncia</Button> 
+            <Button color="inherit" component={Link} to="/sobre" sx={{ fontSize: '0.85rem' }}>Sobre</Button> 
+            <Button color="inherit" component={Link} to="/estatisticas" sx={{ fontSize: '0.85rem' }}>Estatísticas</Button> 
           </Box>
         </Toolbar>
       </AppBar>
 
-      {/* This Toolbar adds a "spacer" to prevent content from going under the fixed AppBar */}
       <Toolbar sx={{ height: "100px" }} />
     </>
   );

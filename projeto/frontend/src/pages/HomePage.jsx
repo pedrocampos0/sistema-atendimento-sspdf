@@ -7,13 +7,12 @@ import { Link } from 'react-router-dom';
 
 export default function HomePage() {
   return (
-    <Box sx={{ bgcolor: '#121212', color: 'white', py: 8, minHeight: '100vh' }}>
+    <Box sx={{ bgcolor: '#1e1e1e', color: 'white', py: 8, minHeight: '100vh' }}> 
 
-      {/* HERO */}
-      <Container maxWidth="md" sx={{ mb: 8 }}>
+      <Container maxWidth="lg" sx={{ mb: 8 }}>
         <Paper
           sx={{
-            bgcolor: '#1E1E1E',
+            bgcolor: '#1e1e1e', 
             p: 4,
             textAlign: 'center',
             borderRadius: 2,
@@ -43,31 +42,36 @@ export default function HomePage() {
         </Paper>
       </Container>
 
-      {/* GRID COM 3 CARDS HORIZONTAIS */}
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ overflow: 'visible' }}>
         <Grid
           container
           spacing={4}
           justifyContent="center"
           alignItems="stretch"
           sx={{
-            flexWrap: 'nowrap',        // IMPEDIR QUE EMPILHE
-            overflowX: 'auto',          // Caso a tela fique muito estreita, permitir scroll horizontal
-            '&::-webkit-scrollbar': {
-              display: 'none',          // Esconde a barra de rolagem horizontal
-            },
+            position: 'relative',
+            overflow: 'visible',     
+            flexWrap: 'nowrap',      
           }}
         >
-          {/* CARD 1 */}
-          <Grid item sx={{ minWidth: 300, maxWidth: 400, flex: 1 }}>
+
+          <Grid item sx={{ minWidth: 300, maxWidth: 400 }}>
             <Paper
               sx={{
-                bgcolor: '#1E1E1E',
+                bgcolor: '#1e1e1e', 
                 p: 3,
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                borderRadius: 2,
+                borderRadius: '1rem',
+                transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-radius 0.3s ease-in-out',
+                position: 'relative',
+                '&:hover': {
+                  transform: 'scale(1.05)',
+                  boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.4)',
+                  borderRadius: '2rem',
+                  zIndex: 2,
+                },
               }}
             >
               <LockIcon sx={{ fontSize: 40, color: '#FFD700', mb: 2 }} />
@@ -80,16 +84,23 @@ export default function HomePage() {
             </Paper>
           </Grid>
 
-          {/* CARD 2 */}
-          <Grid item sx={{ minWidth: 300, maxWidth: 400, flex: 1 }}>
+          <Grid item sx={{ minWidth: 300, maxWidth: 400 }}>
             <Paper
               sx={{
-                bgcolor: '#1E1E1E',
+                bgcolor: '#1e1e1e', 
                 p: 3,
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                borderRadius: 2,
+                borderRadius: '1rem',
+                transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-radius 0.3s ease-in-out',
+                position: 'relative',
+                '&:hover': {
+                  transform: 'scale(1.05)',
+                  boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.4)',
+                  borderRadius: '2rem',
+                  zIndex: 2,
+                },
               }}
             >
               <PhoneIphoneIcon sx={{ fontSize: 40, color: '#00BFFF', mb: 2 }} />
@@ -102,16 +113,23 @@ export default function HomePage() {
             </Paper>
           </Grid>
 
-          {/* CARD 3 */}
-          <Grid item sx={{ minWidth: 300, maxWidth: 400, flex: 1 }}>
+          <Grid item sx={{ minWidth: 300, maxWidth: 400 }}>
             <Paper
               sx={{
-                bgcolor: '#1E1E1E',
+                bgcolor: '#1e1e1e',
                 p: 3,
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                borderRadius: 2,
+                borderRadius: '1rem',
+                transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-radius 0.3s ease-in-out',
+                position: 'relative',
+                '&:hover': {
+                  transform: 'scale(1.05)',
+                  boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.4)',
+                  borderRadius: '2rem',
+                  zIndex: 2,
+                },
               }}
             >
               <SearchIcon sx={{ fontSize: 40, color: '#4CAF50', mb: 2 }} />
@@ -123,6 +141,7 @@ export default function HomePage() {
               </Typography>
             </Paper>
           </Grid>
+
         </Grid>
       </Container>
 

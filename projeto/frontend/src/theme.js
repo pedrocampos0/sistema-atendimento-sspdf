@@ -1,4 +1,3 @@
-// src/theme.js
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
@@ -14,38 +13,36 @@ const theme = createTheme({
     // --text-secondary: #b3b3b3;
 
     primary: {
-      main: '#2196f3', // --accent-color
-      light: '#64b5f6', // Exemplo de tom claro, ajuste se precisar
-      dark: '#1976d2', // --accent-hover
+      main: '#2196f3',
+      light: '#64b5f6',
+      dark: '#1976d2',
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#1E1E1E', // --bg-secondary (usado para Paper, AppBar, etc.)
+      main: '#1E1E1E',
       light: '#424242',
       dark: '#000000',
       contrastText: '#ffffff',
     },
     background: {
-      default: '#121212', // --bg-primary (fundo geral da aplicação)
-      paper: '#1E1E1E',   // --bg-secondary (fundo de cards, formulários, etc.)
+      default: '#121212',
+      paper: '#1E1E1E',
     },
     text: {
-      primary: '#ffffff', // --text-primary
-      secondary: '#b3b3b3', // --text-secondary
+      primary: '#ffffff',
+      secondary: '#b3b3b3',
     },
-    // Você pode adicionar outras cores personalizadas se necessário
-    // Por exemplo, para --bg-tertiary:
     customColors: {
       tertiary: '#2d2d2d',
-      success: '#4caf50', // Do protótipo para ícones de sucesso
-      warning: '#ff9800', // Do protótipo para avisos
-      danger: '#f44336',  // Do protótipo para erros
-      golden: '#FFD700', // Cor do cadeado do protótipo
-      skyBlue: '#00BFFF', // Cor do celular do protótipo
+      success: '#4caf50',
+      warning: '#ff9800',
+      danger: '#f44336',
+      golden: '#FFD700',
+      skyBlue: '#00BFFF',
     },
   },
   typography: {
-    // Define a fonte padrão para toda a aplicação
+
     fontFamily: [
       'Segoe UI',
       'Tahoma',
@@ -53,47 +50,45 @@ const theme = createTheme({
       'Verdana',
       'sans-serif',
     ].join(','),
-    // Ajustes de tamanho e peso para variantes específicas do protótipo
+
     h4: {
-      fontSize: '2rem', // Hero h2 no protótipo
-      fontWeight: 'bold', // Ou 700
-      marginBottom: '15px', // Definido diretamente para consistência com o protótipo
+      fontSize: '2rem',
+      fontWeight: 'bold',
+      marginBottom: '15px',
     },
     h6: {
-      fontSize: '1.25rem', // Equivalente ao h3 dos cards
+      fontSize: '1.25rem',
       fontWeight: 'bold',
-      marginBottom: '10px', // Definido diretamente para consistência com o protótipo
+      marginBottom: '10px',
     },
     body1: {
-      fontSize: '1rem', // Padrão, mas ajuste se precisar
-      lineHeight: 1.5, // Padrão para parágrafos
-      color: '#b3b3b3', // Cor secundária para parágrafos como no protótipo
+      fontSize: '1rem',
+      lineHeight: 1.5,
+      color: '#b3b3b3',
     },
     body2: {
-      fontSize: '0.9rem', // Equivalente a 14.4px, quase 14px padrão do MU
-      lineHeight: 1.5, // Padrão para descrições de cards
-      color: '#b3b3b3', // Cor secundária para descrições de cards
+      fontSize: '0.9rem',
+      lineHeight: 1.5,
+      color: '#b3b3b3',
     },
-    // ... adicione outras variantes de tipografia se necessário
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          textTransform: 'none', // Remove o uppercase padrão dos botões
+          textTransform: 'none',
           fontWeight: 'bold',
-          padding: '12px 24px', // padding: 12px 24px do protótipo
+          padding: '12px 24px',
           fontSize: '1rem',
-          borderRadius: '4px', // border-radius: 4px do protótipo
+          borderRadius: '4px',
         },
       },
     },
     MuiContainer: {
         styleOverrides: {
             root: {
-                paddingLeft: '20px', // padding 20px do .container do protótipo
-                paddingRight: '20px', // padding 20px do .container do protótipo
-                // Ajuste para mobile caso o padding seja diferente no seu protótipo
+                paddingLeft: '20px',
+                paddingRight: '20px',
                 '@media (max-width: 768px)': {
                     paddingLeft: '20px',
                     paddingRight: '20px',
@@ -104,24 +99,21 @@ const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-          backgroundColor: '#1E1E1E', // Default Paper background para ser bg-secondary
-          borderRadius: '8px', // Default Paper border-radius
-          boxShadow: 'none', // Remova a sombra padrão do Paper se não for desejada, ou ajuste
-          // Se o protótipo não usa sombra padrão em todos os Papers, ajuste aqui.
-          // Para os cards, vamos adicionar a sombra via sx no HomePage.
+          backgroundColor: '#1E1E1E',
+          borderRadius: '8px',
+          boxShadow: 'none',
         },
       },
     },
     MuiGrid: {
         styleOverrides: {
             container: {
-                gap: '20px', // Equivalente ao gap: 20px do protótipo para o grid de cards
+                gap: '20px',
             },
         },
     },
-    // Adicione mais customizações de componentes aqui
   },
-  spacing: 8, // Mantém a unidade de espaçamento padrão do Material-UI (8px)
+  spacing: 8,
 });
 
 export default theme;

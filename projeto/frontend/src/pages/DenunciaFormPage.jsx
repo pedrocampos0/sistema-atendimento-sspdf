@@ -12,10 +12,9 @@ export default function DenunciaFormPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Here you would typically send the form data to your backend
     console.log({ category, location, description });
-    alert('Denúncia enviada com sucesso! (Isso é apenas um exemplo de front-end)');
-    // Reset form
+    alert('Denúncia enviada com sucesso!');
+
     setCategory('');
     setLocation('');
     setDescription('');
@@ -24,10 +23,10 @@ export default function DenunciaFormPage() {
   return (
     <Box
       sx={{
-        bgcolor: '#1A1A1A',
+        bgcolor: '#1e1e1e', 
         color: 'white',
         py: 8,
-        minHeight: 'calc(100vh - 100px)', // Adjust for AppBar height
+        minHeight: 'calc(100vh - 100px)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -42,7 +41,7 @@ export default function DenunciaFormPage() {
             Preencha os campos abaixo para registrar sua denúncia
           </Typography>
 
-          <Alert severity="info" sx={{ mb: 3, bgcolor: '#222222', color: 'white' }}>
+          <Alert severity="info" sx={{ mb: 3, bgcolor: '#1e1e1e', color: 'white' }}> 
             <Typography variant="body2">
               <span role="img" aria-label="shield">🛡️</span> Sua segurança é nossa prioridade
               <br />
