@@ -41,7 +41,7 @@ export default function EstatisticasPage() {
             Estatísticas das Denúncias
           </Typography>
           <Typography variant="body1" sx={{ mb: 4, lineHeight: 1.6 }}>
-            Confira os números e o panorama das denúncias registradas na plataforma SADA.
+            Confira nossas estatisticas das denúncias registradas na plataforma SADA.
           </Typography>
 
           <Grid container spacing={3} justifyContent="center">
