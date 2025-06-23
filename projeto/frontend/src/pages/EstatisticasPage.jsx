@@ -18,6 +18,17 @@ export default function EstatisticasPage() {
     ],
   };
 
+  const paperHoverStyle = {
+    bgcolor: theme.palette.customColors.tertiary,
+    p: 2,
+    borderRadius: 2,
+    transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+    '&:hover': {
+      transform: 'scale(1.05)',
+      boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.4)',
+    },
+  };
+
   return (
     <Box
       sx={{
@@ -44,12 +55,12 @@ export default function EstatisticasPage() {
             Estatísticas das Denúncias
           </Typography>
           <Typography variant="body1" sx={{ mb: 4, lineHeight: 1.6 }}>
-            Confira nossas estatisticas das denúncias registradas na plataforma SADA.
+            Confira nossas estatísticas das denúncias registradas na plataforma SADA.
           </Typography>
 
           <Grid container spacing={3} justifyContent="center">
             <Grid item xs={12} sm={6} md={3}>
-              <Paper sx={{ bgcolor: theme.palette.customColors.tertiary, p: 2, borderRadius: 2 }}>
+              <Paper sx={paperHoverStyle}>
                 <Typography variant="h6" color="primary.main">
                   Total de Denúncias
                 </Typography>
@@ -59,7 +70,7 @@ export default function EstatisticasPage() {
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={3}>
-              <Paper sx={{ bgcolor: theme.palette.customColors.tertiary, p: 2, borderRadius: 2 }}>
+              <Paper sx={paperHoverStyle}>
                 <Typography variant="h6" color="success.main">
                   Resolvidas
                 </Typography>
@@ -69,7 +80,7 @@ export default function EstatisticasPage() {
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={3}>
-              <Paper sx={{ bgcolor: theme.palette.customColors.tertiary, p: 2, borderRadius: 2 }}>
+              <Paper sx={paperHoverStyle}>
                 <Typography variant="h6" color="warning.main">
                   Em Andamento
                 </Typography>
@@ -79,7 +90,7 @@ export default function EstatisticasPage() {
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={3}>
-              <Paper sx={{ bgcolor: theme.palette.customColors.tertiary, p: 2, borderRadius: 2 }}>
+              <Paper sx={paperHoverStyle}>
                 <Typography variant="h6" color="error.main">
                   Pendentes
                 </Typography>
@@ -97,14 +108,7 @@ export default function EstatisticasPage() {
             <Grid container spacing={2} justifyContent="center">
               {statistics.topCategories.map((category, index) => (
                 <Grid item xs={12} sm={6} md={3} key={index}>
-                  <Paper
-                    sx={{
-                      bgcolor: theme.palette.customColors.tertiary,
-                      p: 2,
-                      borderRadius: 2,
-                      height: '100%',
-                    }}
-                  >
+                  <Paper sx={{ ...paperHoverStyle, height: '100%' }}>
                     <Typography variant="h6" fontWeight="bold" color="text.primary">
                       {category.name}
                     </Typography>

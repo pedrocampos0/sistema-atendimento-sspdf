@@ -1,18 +1,17 @@
-// SobrePage.jsx
 import * as React from 'react';
 import { Box, Typography, Container, Paper } from '@mui/material';
-import { useTheme } from '@mui/material/styles'; // Import useTheme
+import { useTheme } from '@mui/material/styles';
 
 export default function SobrePage() {
-  const theme = useTheme(); // Access the theme
+  const theme = useTheme(); 
 
   return (
     <Box
       sx={{
-        bgcolor: theme.palette.background.default, // Using theme color
-        color: theme.palette.text.primary, // Using theme color
+        bgcolor: theme.palette.background.default,
+        color: theme.palette.text.primary, 
         py: 8,
-        minHeight: 'calc(100vh - 100px)', // Adjusted height for AppBar
+        minHeight: 'calc(100vh - 100px)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -21,7 +20,7 @@ export default function SobrePage() {
       <Container maxWidth="lg" sx={{ mb: 8 }}>
         <Paper
           sx={{
-            bgcolor: theme.palette.background.paper, // Using theme color
+            bgcolor: theme.palette.background.paper, 
             p: 4,
             borderRadius: 2,
             boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.4)',

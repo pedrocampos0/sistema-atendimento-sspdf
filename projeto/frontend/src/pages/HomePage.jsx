@@ -4,10 +4,10 @@ import LockIcon from '@mui/icons-material/Lock';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
-import { useTheme } from '@mui/material/styles'; // Import useTheme
+import { useTheme } from '@mui/material/styles';
 
 export default function HomePage() {
-  const theme = useTheme(); // Access the theme
+  const theme = useTheme(); 
 
   return (
     <Box 
@@ -15,9 +15,9 @@ export default function HomePage() {
         bgcolor: theme.palette.background.default, 
         color: theme.palette.text.primary, 
         py: 8, 
-        minHeight: 'calc(100vh - 100px)', // Adjusted height for AppBar
+        minHeight: 'calc(100vh - 100px)', 
         display: 'flex',
-        flexDirection: 'column', // Ensures content aligns nicely
+        flexDirection: 'column', 
         alignItems: 'center',
         justifyContent: 'center',
       }}
@@ -25,7 +25,7 @@ export default function HomePage() {
       <Container maxWidth="lg" sx={{ mb: 8 }}>
         <Paper
           sx={{
-            bgcolor: theme.palette.background.paper, // Using theme color
+            bgcolor: theme.palette.background.paper, 
             p: 4,
             textAlign: 'center',
             borderRadius: 2,
@@ -43,13 +43,13 @@ export default function HomePage() {
             to="/fazer-denuncia"
             sx={{
               mt: 3,
-              backgroundColor: theme.palette.primary.main, // Using theme color
+              backgroundColor: theme.palette.primary.main, 
               fontWeight: 'bold',
               px: 4,
               py: 1.5,
               transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
               '&:hover': {
-                backgroundColor: theme.palette.primary.dark, // Using theme hover color
+                backgroundColor: theme.palette.primary.dark, 
                 transform: 'scale(1.05)',
                 boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.4)',
               },
@@ -75,7 +75,7 @@ export default function HomePage() {
           <Grid item sx={{ minWidth: 300, maxWidth: 400 }}>
             <Paper
               sx={{
-                bgcolor: theme.palette.background.paper, // Using theme color
+                bgcolor: theme.palette.background.paper, 
                 p: 3,
                 height: '100%',
                 display: 'flex',
@@ -91,7 +91,7 @@ export default function HomePage() {
                 },
               }}
             >
-              <LockIcon sx={{ fontSize: 40, color: theme.palette.customColors.golden, mb: 2 }} /> {/* Using theme color */}
+              <LockIcon sx={{ fontSize: 40, color: theme.palette.customColors.golden, mb: 2 }} /> 
               <Typography variant="h6" fontWeight="bold" gutterBottom>
                 Anonimato Garantido
               </Typography>
@@ -104,7 +104,7 @@ export default function HomePage() {
           <Grid item sx={{ minWidth: 300, maxWidth: 400 }}>
             <Paper
               sx={{
-                bgcolor: theme.palette.background.paper, // Using theme color
+                bgcolor: theme.palette.background.paper, 
                 p: 3,
                 height: '100%',
                 display: 'flex',
@@ -120,7 +120,7 @@ export default function HomePage() {
                 },
               }}
             >
-              <PhoneIphoneIcon sx={{ fontSize: 40, color: theme.palette.customColors.skyBlue, mb: 2 }} /> {/* Using theme color */}
+              <PhoneIphoneIcon sx={{ fontSize: 40, color: theme.palette.customColors.skyBlue, mb: 2 }} /> 
               <Typography variant="h6" fontWeight="bold" gutterBottom>
                 Acesso e Acompanhamento
               </Typography>
@@ -133,7 +133,7 @@ export default function HomePage() {
           <Grid item sx={{ minWidth: 300, maxWidth: 400 }}>
             <Paper
               sx={{
-                bgcolor: theme.palette.background.paper, // Using theme color
+                bgcolor: theme.palette.background.paper, 
                 p: 3,
                 height: '100%',
                 display: 'flex',
@@ -149,7 +149,7 @@ export default function HomePage() {
                 },
               }}
             >
-              <SearchIcon sx={{ fontSize: 40, color: theme.palette.customColors.success, mb: 2 }} /> {/* Using theme color */}
+              <SearchIcon sx={{ fontSize: 40, color: theme.palette.customColors.success, mb: 2 }} />
               <Typography variant="h6" fontWeight="bold" gutterBottom>
                 Análise Eficiente
               </Typography>

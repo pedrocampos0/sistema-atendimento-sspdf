@@ -26,19 +26,19 @@ export default function DenunciaFormPage() {
       sx={{
         bgcolor: theme.palette.background.default,
         color: theme.palette.text.primary,
-        py: 4,                    // reduziu o padding vertical
-        minHeight: 'calc(100vh - 160px)',  // diminuiu ainda mais a altura mínima
+        py: 4,
+        minHeight: 'calc(100vh - 160px)',  
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        overflowY: 'auto',       // garante scroll só se precisar
+        overflowY: 'auto',      
       }}
     >
       <Container maxWidth="lg">
         <Paper
           sx={{
             bgcolor: theme.palette.background.paper,
-            p: 3,                // diminuiu o padding interno
+            p: 3,               
             borderRadius: 2,
             textAlign: 'center',
           }}

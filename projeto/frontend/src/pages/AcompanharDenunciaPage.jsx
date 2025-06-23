@@ -19,7 +19,7 @@ export default function AcompanharDenunciaPage() {
         bgcolor: theme.palette.background.default,
         color: theme.palette.text.primary,
         py: 8,
-        minHeight: 'calc(100vh - 100px)', // Adjusted height for AppBar
+        minHeight: 'calc(100vh - 100px)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -63,27 +63,28 @@ export default function AcompanharDenunciaPage() {
               }}
             />
 
-            <Button
-              type="submit"
-              variant="contained"
-              size="medium"
-              fullWidth
-              sx={{
-                backgroundColor: theme.palette.primary.main,
-                fontWeight: 'bold',
-                py: 1.5,
-                px: 4,
-                mt: 1,
-                transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
-                '&:hover': {
-                  backgroundColor: theme.palette.primary.dark,
-                  transform: 'scale(1.05)',
-                  boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.4)',
-                },
-              }}
-            >
-              Verificar
-            </Button>
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+              <Button
+                type="submit"
+                variant="contained"
+                sx={{
+                  backgroundColor: theme.palette.primary.main,
+                  fontWeight: 'bold',
+                  px: 4,
+                  py: 1,
+                  borderRadius: 1,
+                  textTransform: 'none',
+                  transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+                  '&:hover': {
+                    backgroundColor: theme.palette.primary.dark,
+                    transform: 'scale(1.05)',
+                    boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.3)',
+                  },
+                }}
+              >
+                Verificar
+              </Button>
+            </Box>
           </form>
         </Paper>
       </Container>
