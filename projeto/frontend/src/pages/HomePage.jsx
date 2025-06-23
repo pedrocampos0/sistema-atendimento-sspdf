@@ -4,14 +4,28 @@ import LockIcon from '@mui/icons-material/Lock';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
+import { useTheme } from '@mui/material/styles'; // Import useTheme
 
 export default function HomePage() {
+  const theme = useTheme(); // Access the theme
+
   return (
-    <Box sx={{ bgcolor: '#1e1e1e', color: 'white', py: 8, minHeight: '100vh' }}>
+    <Box 
+      sx={{ 
+        bgcolor: theme.palette.background.default, 
+        color: theme.palette.text.primary, 
+        py: 8, 
+        minHeight: 'calc(100vh - 100px)', // Adjusted height for AppBar
+        display: 'flex',
+        flexDirection: 'column', // Ensures content aligns nicely
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
       <Container maxWidth="lg" sx={{ mb: 8 }}>
         <Paper
           sx={{
-            bgcolor: '#1e1e1e',
+            bgcolor: theme.palette.background.paper, // Using theme color
             p: 4,
             textAlign: 'center',
             borderRadius: 2,
@@ -29,13 +43,13 @@ export default function HomePage() {
             to="/fazer-denuncia"
             sx={{
               mt: 3,
-              backgroundColor: '#2196f3',
+              backgroundColor: theme.palette.primary.main, // Using theme color
               fontWeight: 'bold',
               px: 4,
               py: 1.5,
               transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
               '&:hover': {
-                backgroundColor: '#1976d2',
+                backgroundColor: theme.palette.primary.dark, // Using theme hover color
                 transform: 'scale(1.05)',
                 boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.4)',
               },
@@ -61,7 +75,7 @@ export default function HomePage() {
           <Grid item sx={{ minWidth: 300, maxWidth: 400 }}>
             <Paper
               sx={{
-                bgcolor: '#1e1e1e',
+                bgcolor: theme.palette.background.paper, // Using theme color
                 p: 3,
                 height: '100%',
                 display: 'flex',
@@ -77,7 +91,7 @@ export default function HomePage() {
                 },
               }}
             >
-              <LockIcon sx={{ fontSize: 40, color: '#FFD700', mb: 2 }} />
+              <LockIcon sx={{ fontSize: 40, color: theme.palette.customColors.golden, mb: 2 }} /> {/* Using theme color */}
               <Typography variant="h6" fontWeight="bold" gutterBottom>
                 Anonimato Garantido
               </Typography>
@@ -90,7 +104,7 @@ export default function HomePage() {
           <Grid item sx={{ minWidth: 300, maxWidth: 400 }}>
             <Paper
               sx={{
-                bgcolor: '#1e1e1e',
+                bgcolor: theme.palette.background.paper, // Using theme color
                 p: 3,
                 height: '100%',
                 display: 'flex',
@@ -106,7 +120,7 @@ export default function HomePage() {
                 },
               }}
             >
-              <PhoneIphoneIcon sx={{ fontSize: 40, color: '#00BFFF', mb: 2 }} />
+              <PhoneIphoneIcon sx={{ fontSize: 40, color: theme.palette.customColors.skyBlue, mb: 2 }} /> {/* Using theme color */}
               <Typography variant="h6" fontWeight="bold" gutterBottom>
                 Acesso e Acompanhamento
               </Typography>
@@ -119,7 +133,7 @@ export default function HomePage() {
           <Grid item sx={{ minWidth: 300, maxWidth: 400 }}>
             <Paper
               sx={{
-                bgcolor: '#1e1e1e',
+                bgcolor: theme.palette.background.paper, // Using theme color
                 p: 3,
                 height: '100%',
                 display: 'flex',
@@ -135,7 +149,7 @@ export default function HomePage() {
                 },
               }}
             >
-              <SearchIcon sx={{ fontSize: 40, color: '#4CAF50', mb: 2 }} />
+              <SearchIcon sx={{ fontSize: 40, color: theme.palette.customColors.success, mb: 2 }} /> {/* Using theme color */}
               <Typography variant="h6" fontWeight="bold" gutterBottom>
                 Análise Eficiente
               </Typography>

@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { Box, Typography, Container, Select, MenuItem, FormControl, InputLabel, TextField, Button, Alert, Paper } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 export default function DenunciaFormPage() {
   const [category, setCategory] = React.useState('');
   const [location, setLocation] = React.useState('');
   const [description, setDescription] = React.useState('');
+  const theme = useTheme();
 
   const handleCategoryChange = (event) => {
     setCategory(event.target.value);
@@ -20,12 +22,23 @@ export default function DenunciaFormPage() {
   };
 
   return (
-    <Box sx={{ bgcolor: '#1e1e1e', color: 'white', py: 8, minHeight: '100vh' }}>
+    <Box
+      sx={{
+        bgcolor: theme.palette.background.default,
+        color: theme.palette.text.primary,
+        py: 4,                    // reduziu o padding vertical
+        minHeight: 'calc(100vh - 160px)',  // diminuiu ainda mais a altura mínima
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflowY: 'auto',       // garante scroll só se precisar
+      }}
+    >
       <Container maxWidth="lg">
         <Paper
           sx={{
-            bgcolor: '#1e1e1e',
-            p: 4,
+            bgcolor: theme.palette.background.paper,
+            p: 3,                // diminuiu o padding interno
             borderRadius: 2,
             textAlign: 'center',
           }}
@@ -42,10 +55,10 @@ export default function DenunciaFormPage() {
             severity="info"
             sx={{
               mb: 3,
-              bgcolor: '#1e1e1e',
-              color: 'white',
+              bgcolor: theme.palette.background.paper,
+              color: theme.palette.text.primary,
               fontSize: '0.85rem',
-              border: '1px solid #2196f3',
+              border: `1px solid ${theme.palette.primary.main}`,
             }}
           >
             <Typography variant="body2">
@@ -56,7 +69,9 @@ export default function DenunciaFormPage() {
 
           <form onSubmit={handleSubmit}>
             <FormControl fullWidth size="small" sx={{ mb: 3 }}>
-              <InputLabel id="category-label" sx={{ color: 'white' }}>Categoria</InputLabel>
+              <InputLabel id="category-label" sx={{ color: theme.palette.text.primary }}>
+                Categoria
+              </InputLabel>
               <Select
                 labelId="category-label"
                 id="category-select"
@@ -64,14 +79,16 @@ export default function DenunciaFormPage() {
                 label="Categoria"
                 onChange={handleCategoryChange}
                 sx={{
-                  '& .MuiSelect-select': { color: 'white' },
+                  '& .MuiSelect-select': { color: theme.palette.text.primary },
                   '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255, 255, 255, 0.23)' },
-                  '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: 'white' },
-                  '&.Mui-focused .MuiOutlinedInput-notchedOutline': { borderColor: '#2196f3' },
-                  '& .MuiSvgIcon-root': { color: 'white' },
+                  '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: theme.palette.text.primary },
+                  '&.Mui-focused .MuiOutlinedInput-notchedOutline': { borderColor: theme.palette.primary.main },
+                  '& .MuiSvgIcon-root': { color: theme.palette.text.primary },
                 }}
               >
-                <MenuItem value=""><em>Selecione</em></MenuItem>
+                <MenuItem value="">
+                  <em>Selecione</em>
+                </MenuItem>
                 <MenuItem value="corrupcao">Corrupção</MenuItem>
                 <MenuItem value="fraude">Fraude</MenuItem>
                 <MenuItem value="assediomoral">Assédio Moral</MenuItem>
@@ -91,12 +108,12 @@ export default function DenunciaFormPage() {
                 mb: 3,
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': { borderColor: 'rgba(255, 255, 255, 0.23)' },
-                  '&:hover fieldset': { borderColor: 'white' },
-                  '&.Mui-focused fieldset': { borderColor: '#2196f3' },
-                  '& input': { color: 'white' },
+                  '&:hover fieldset': { borderColor: theme.palette.text.primary },
+                  '&.Mui-focused fieldset': { borderColor: theme.palette.primary.main },
+                  '& input': { color: theme.palette.text.primary },
                 },
-                '& .MuiInputLabel-root': { color: 'white' },
-                '& .MuiInputLabel-root.Mui-focused': { color: '#2196f3' },
+                '& .MuiInputLabel-root': { color: theme.palette.text.primary },
+                '& .MuiInputLabel-root.Mui-focused': { color: theme.palette.primary.main },
               }}
             />
 
@@ -114,12 +131,12 @@ export default function DenunciaFormPage() {
                 mb: 3,
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': { borderColor: 'rgba(255, 255, 255, 0.23)' },
-                  '&:hover fieldset': { borderColor: 'white' },
-                  '&.Mui-focused fieldset': { borderColor: '#2196f3' },
-                  '& textarea': { color: 'white' },
+                  '&:hover fieldset': { borderColor: theme.palette.text.primary },
+                  '&.Mui-focused fieldset': { borderColor: theme.palette.primary.main },
+                  '& textarea': { color: theme.palette.text.primary },
                 },
-                '& .MuiInputLabel-root': { color: 'white' },
-                '& .MuiInputLabel-root.Mui-focused': { color: '#2196f3' },
+                '& .MuiInputLabel-root': { color: theme.palette.text.primary },
+                '& .MuiInputLabel-root.Mui-focused': { color: theme.palette.primary.main },
               }}
             />
 
@@ -128,14 +145,14 @@ export default function DenunciaFormPage() {
               variant="contained"
               size="medium"
               sx={{
-                backgroundColor: '#2196f3',
+                backgroundColor: theme.palette.primary.main,
                 fontWeight: 'bold',
                 py: 1.5,
                 px: 4,
                 mt: 1,
                 transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
                 '&:hover': {
-                  backgroundColor: '#1976d2',
+                  backgroundColor: theme.palette.primary.dark,
                   transform: 'scale(1.05)',
                   boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.4)',
                 },

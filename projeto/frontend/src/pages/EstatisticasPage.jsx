@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { Box, Typography, Container, Paper, Grid } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 export default function EstatisticasPage() {
+  const theme = useTheme();
+
   const statistics = {
     totalComplaints: 1250,
     resolvedComplaints: 980,
@@ -18,10 +21,10 @@ export default function EstatisticasPage() {
   return (
     <Box
       sx={{
-        bgcolor: '#1e1e1e',
-        color: 'white',
-        py: 8,
-        minHeight: '100vh',
+        bgcolor: theme.palette.background.default,
+        color: theme.palette.text.primary,
+        py: 6,
+        minHeight: 'calc(100vh - 140px)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -30,7 +33,7 @@ export default function EstatisticasPage() {
       <Container maxWidth="lg" sx={{ mb: 8 }}>
         <Paper
           sx={{
-            bgcolor: '#1e1e1e',
+            bgcolor: theme.palette.background.paper,
             p: 4,
             borderRadius: 2,
             boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.4)',
@@ -46,7 +49,7 @@ export default function EstatisticasPage() {
 
           <Grid container spacing={3} justifyContent="center">
             <Grid item xs={12} sm={6} md={3}>
-              <Paper sx={{ bgcolor: '#2d2d2d', p: 2, borderRadius: 2 }}>
+              <Paper sx={{ bgcolor: theme.palette.customColors.tertiary, p: 2, borderRadius: 2 }}>
                 <Typography variant="h6" color="primary.main">
                   Total de Denúncias
                 </Typography>
@@ -56,7 +59,7 @@ export default function EstatisticasPage() {
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={3}>
-              <Paper sx={{ bgcolor: '#2d2d2d', p: 2, borderRadius: 2 }}>
+              <Paper sx={{ bgcolor: theme.palette.customColors.tertiary, p: 2, borderRadius: 2 }}>
                 <Typography variant="h6" color="success.main">
                   Resolvidas
                 </Typography>
@@ -66,7 +69,7 @@ export default function EstatisticasPage() {
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={3}>
-              <Paper sx={{ bgcolor: '#2d2d2d', p: 2, borderRadius: 2 }}>
+              <Paper sx={{ bgcolor: theme.palette.customColors.tertiary, p: 2, borderRadius: 2 }}>
                 <Typography variant="h6" color="warning.main">
                   Em Andamento
                 </Typography>
@@ -76,7 +79,7 @@ export default function EstatisticasPage() {
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={3}>
-              <Paper sx={{ bgcolor: '#2d2d2d', p: 2, borderRadius: 2 }}>
+              <Paper sx={{ bgcolor: theme.palette.customColors.tertiary, p: 2, borderRadius: 2 }}>
                 <Typography variant="h6" color="error.main">
                   Pendentes
                 </Typography>
@@ -94,11 +97,18 @@ export default function EstatisticasPage() {
             <Grid container spacing={2} justifyContent="center">
               {statistics.topCategories.map((category, index) => (
                 <Grid item xs={12} sm={6} md={3} key={index}>
-                  <Paper sx={{ bgcolor: '#2d2d2d', p: 2, borderRadius: 2, height: '100%' }}>
-                    <Typography variant="h6" fontWeight="bold" color="text.primary" sx={{ color: 'white' }}>
+                  <Paper
+                    sx={{
+                      bgcolor: theme.palette.customColors.tertiary,
+                      p: 2,
+                      borderRadius: 2,
+                      height: '100%',
+                    }}
+                  >
+                    <Typography variant="h6" fontWeight="bold" color="text.primary">
                       {category.name}
                     </Typography>
-                    <Typography variant="body1" color="text.secondary" sx={{ color: '#bbb' }}>
+                    <Typography variant="body1" color="text.secondary">
                       {category.count} denúncias
                     </Typography>
                   </Paper>

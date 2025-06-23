@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { Box, Typography, Container, TextField, Button, Paper } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 export default function AcompanharDenunciaPage() {
   const [protocolNumber, setProtocolNumber] = React.useState('');
+  const theme = useTheme();
 
   const handleTrackComplaint = (event) => {
     event.preventDefault();
@@ -12,11 +14,21 @@ export default function AcompanharDenunciaPage() {
   };
 
   return (
-    <Box sx={{ bgcolor: '#1e1e1e', color: 'white', py: 8, minHeight: '100vh' }}>
+    <Box
+      sx={{
+        bgcolor: theme.palette.background.default,
+        color: theme.palette.text.primary,
+        py: 8,
+        minHeight: 'calc(100vh - 100px)', // Adjusted height for AppBar
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
       <Container maxWidth="sm">
         <Paper
           sx={{
-            bgcolor: '#1e1e1e',
+            bgcolor: theme.palette.background.paper,
             p: 4,
             borderRadius: 2,
             textAlign: 'center',
@@ -42,27 +54,29 @@ export default function AcompanharDenunciaPage() {
                 mb: 3,
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': { borderColor: 'rgba(255, 255, 255, 0.23)' },
-                  '&:hover fieldset': { borderColor: 'white' },
-                  '&.Mui-focused fieldset': { borderColor: '#2196f3' },
-                  '& input': { color: 'white' },
+                  '&:hover fieldset': { borderColor: theme.palette.text.primary },
+                  '&.Mui-focused fieldset': { borderColor: theme.palette.primary.main },
+                  '& input': { color: theme.palette.text.primary },
                 },
-                '& .MuiInputLabel-root': { color: 'white' },
-                '& .MuiInputLabel-root.Mui-focused': { color: '#2196f3' },
+                '& .MuiInputLabel-root': { color: theme.palette.text.primary },
+                '& .MuiInputLabel-root.Mui-focused': { color: theme.palette.primary.main },
               }}
             />
 
             <Button
               type="submit"
               variant="contained"
+              size="medium"
               fullWidth
               sx={{
-                backgroundColor: '#2196f3',
+                backgroundColor: theme.palette.primary.main,
                 fontWeight: 'bold',
                 py: 1.5,
                 px: 4,
+                mt: 1,
                 transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
                 '&:hover': {
-                  backgroundColor: '#1976d2',
+                  backgroundColor: theme.palette.primary.dark,
                   transform: 'scale(1.05)',
                   boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.4)',
                 },
