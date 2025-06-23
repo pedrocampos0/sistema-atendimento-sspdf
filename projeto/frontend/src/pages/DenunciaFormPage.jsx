@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Typography, Container, Select, MenuItem, FormControl, InputLabel, TextField, Button, Alert } from '@mui/material';
+import { Box, Typography, Container, Select, MenuItem, FormControl, InputLabel, TextField, Button, Alert, Paper } from '@mui/material';
 
 export default function DenunciaFormPage() {
   const [category, setCategory] = React.useState('');
@@ -14,49 +14,54 @@ export default function DenunciaFormPage() {
     event.preventDefault();
     console.log({ category, location, description });
     alert('Denúncia enviada com sucesso!');
-
     setCategory('');
     setLocation('');
     setDescription('');
   };
 
   return (
-    <Box
-      sx={{
-        bgcolor: '#1e1e1e', 
-        color: 'white',
-        py: 8,
-        minHeight: 'calc(100vh - 100px)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <Container maxWidth="sm">
-        <Box sx={{ bgcolor: '#121212', p: 4, borderRadius: 2, boxShadow: 3 }}>
-          <Typography variant="h5" fontWeight="bold" align="center" gutterBottom>
+    <Box sx={{ bgcolor: '#1e1e1e', color: 'white', py: 8, minHeight: '100vh' }}>
+      <Container maxWidth="lg">
+        <Paper
+          sx={{
+            bgcolor: '#1e1e1e',
+            p: 4,
+            borderRadius: 2,
+            textAlign: 'center',
+          }}
+        >
+          <Typography variant="h5" fontWeight="bold" gutterBottom>
             Formulário de Denúncia
           </Typography>
-          <Typography variant="body2" align="center" mb={4}>
-            Preencha os campos abaixo para registrar sua denúncia
+
+          <Typography variant="body1" sx={{ lineHeight: 1.6 }} gutterBottom>
+            Sua denúncia é anônima e segura. Preencha os campos abaixo.
           </Typography>
 
-          <Alert severity="info" sx={{ mb: 3, bgcolor: '#1e1e1e', color: 'white' }}> 
+          <Alert
+            severity="info"
+            sx={{
+              mb: 3,
+              bgcolor: '#1e1e1e',
+              color: 'white',
+              fontSize: '0.85rem',
+              border: '1px solid #2196f3',
+            }}
+          >
             <Typography variant="body2">
-              <span role="img" aria-label="shield">🛡️</span> Sua segurança é nossa prioridade
-              <br />
-              Esta plataforma não coleta dados pessoais, endereço IP ou qualquer informação que possa identificá-lo. Todo o processo é anônimo e seguro.
+              🛡️ Sua segurança é nossa prioridade<br />
+              Esta plataforma não coleta dados pessoais, IP ou qualquer informação que possa identificá-lo.
             </Typography>
           </Alert>
 
           <form onSubmit={handleSubmit}>
-            <FormControl fullWidth sx={{ mb: 3 }}>
-              <InputLabel id="category-label" sx={{ color: 'white' }}>Categoria da Denúncia</InputLabel>
+            <FormControl fullWidth size="small" sx={{ mb: 3 }}>
+              <InputLabel id="category-label" sx={{ color: 'white' }}>Categoria</InputLabel>
               <Select
                 labelId="category-label"
                 id="category-select"
                 value={category}
-                label="Categoria da Denúncia"
+                label="Categoria"
                 onChange={handleCategoryChange}
                 sx={{
                   '& .MuiSelect-select': { color: 'white' },
@@ -66,9 +71,7 @@ export default function DenunciaFormPage() {
                   '& .MuiSvgIcon-root': { color: 'white' },
                 }}
               >
-                <MenuItem value="">
-                  <em>Selecione uma categoria</em>
-                </MenuItem>
+                <MenuItem value=""><em>Selecione</em></MenuItem>
                 <MenuItem value="corrupcao">Corrupção</MenuItem>
                 <MenuItem value="fraude">Fraude</MenuItem>
                 <MenuItem value="assediomoral">Assédio Moral</MenuItem>
@@ -78,11 +81,12 @@ export default function DenunciaFormPage() {
 
             <TextField
               fullWidth
+              size="small"
               label="Local da Ocorrência"
               variant="outlined"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              placeholder="Cidade, bairro, rua (seja o mais específico possível)"
+              placeholder="Cidade, bairro, rua"
               sx={{
                 mb: 3,
                 '& .MuiOutlinedInput-root': {
@@ -90,7 +94,6 @@ export default function DenunciaFormPage() {
                   '&:hover fieldset': { borderColor: 'white' },
                   '&.Mui-focused fieldset': { borderColor: '#2196f3' },
                   '& input': { color: 'white' },
-                  '& textarea': { color: 'white' },
                 },
                 '& .MuiInputLabel-root': { color: 'white' },
                 '& .MuiInputLabel-root.Mui-focused': { color: '#2196f3' },
@@ -99,15 +102,16 @@ export default function DenunciaFormPage() {
 
             <TextField
               fullWidth
-              label="Descrição da Ocorrência"
+              size="small"
+              label="Descrição"
               variant="outlined"
               multiline
-              rows={6}
+              rows={4}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder="Descreva com detalhes o que aconteceu, quando aconteceu e quaisquer informações relevantes"
+              placeholder="Descreva com detalhes o ocorrido"
               sx={{
-                mb: 4,
+                mb: 3,
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': { borderColor: 'rgba(255, 255, 255, 0.23)' },
                   '&:hover fieldset': { borderColor: 'white' },
@@ -122,13 +126,25 @@ export default function DenunciaFormPage() {
             <Button
               type="submit"
               variant="contained"
-              fullWidth
-              sx={{ backgroundColor: '#2196f3', fontWeight: 'bold', py: 1.5 }}
+              size="medium"
+              sx={{
+                backgroundColor: '#2196f3',
+                fontWeight: 'bold',
+                py: 1.5,
+                px: 4,
+                mt: 1,
+                transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+                '&:hover': {
+                  backgroundColor: '#1976d2',
+                  transform: 'scale(1.05)',
+                  boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.4)',
+                },
+              }}
             >
               Enviar Denúncia
             </Button>
           </form>
-        </Box>
+        </Paper>
       </Container>
     </Box>
   );

@@ -7,12 +7,11 @@ import { Link } from 'react-router-dom';
 
 export default function HomePage() {
   return (
-    <Box sx={{ bgcolor: '#1e1e1e', color: 'white', py: 8, minHeight: '100vh' }}> 
-
+    <Box sx={{ bgcolor: '#1e1e1e', color: 'white', py: 8, minHeight: '100vh' }}>
       <Container maxWidth="lg" sx={{ mb: 8 }}>
         <Paper
           sx={{
-            bgcolor: '#1e1e1e', 
+            bgcolor: '#1e1e1e',
             p: 4,
             textAlign: 'center',
             borderRadius: 2,
@@ -26,16 +25,21 @@ export default function HomePage() {
           </Typography>
           <Button
             variant="contained"
+            component={Link}
+            to="/fazer-denuncia"
             sx={{
               mt: 3,
               backgroundColor: '#2196f3',
               fontWeight: 'bold',
               px: 4,
               py: 1.5,
-              '&:hover': { backgroundColor: '#1976d2' },
+              transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+              '&:hover': {
+                backgroundColor: '#1976d2',
+                transform: 'scale(1.05)',
+                boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.4)',
+              },
             }}
-            component={Link}
-            to="/fazer-denuncia"
           >
             Fazer uma denúncia
           </Button>
@@ -50,15 +54,14 @@ export default function HomePage() {
           alignItems="stretch"
           sx={{
             position: 'relative',
-            overflow: 'visible',     
-            flexWrap: 'nowrap',      
+            overflow: 'visible',
+            flexWrap: 'nowrap',
           }}
         >
-
           <Grid item sx={{ minWidth: 300, maxWidth: 400 }}>
             <Paper
               sx={{
-                bgcolor: '#1e1e1e', 
+                bgcolor: '#1e1e1e',
                 p: 3,
                 height: '100%',
                 display: 'flex',
@@ -87,7 +90,7 @@ export default function HomePage() {
           <Grid item sx={{ minWidth: 300, maxWidth: 400 }}>
             <Paper
               sx={{
-                bgcolor: '#1e1e1e', 
+                bgcolor: '#1e1e1e',
                 p: 3,
                 height: '100%',
                 display: 'flex',
@@ -141,10 +144,8 @@ export default function HomePage() {
               </Typography>
             </Paper>
           </Grid>
-
         </Grid>
       </Container>
-
     </Box>
   );
 }
