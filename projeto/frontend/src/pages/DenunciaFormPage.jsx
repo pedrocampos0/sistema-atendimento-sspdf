@@ -3,8 +3,10 @@ import { Box, Typography, Container, Select, MenuItem, FormControl, InputLabel, 
 import { useTheme } from '@mui/material/styles';
 import useApi from "../hooks/api";
 import { useEffect } from "react";
+import {useAlert} from "../Components/Context/AlertContext";
 
 export default function DenunciaFormPage() {
+    const alert = useAlert();
     const { loading, get, post } = useApi();
     const [categoryOptions, setCategoryOptions] = React.useState([]);
     const [category, setCategory] = React.useState('');
@@ -29,13 +31,13 @@ export default function DenunciaFormPage() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        await post('/denuncia', {
+        const response = await post('/denuncia', {
             descricao: description,
             localizacao: location,
             ocorrencia_id: category,
             orgao_id: orgao
         });
-        alert('Denúncia enviada com sucesso!');
+        alert(`Denúncia enviada com sucesso, anote o procolo ${response.protocolo_codigo}!`, {type: "success", duration: 10000});
         setCategory('');
         setLocation('');
         setDescription('');

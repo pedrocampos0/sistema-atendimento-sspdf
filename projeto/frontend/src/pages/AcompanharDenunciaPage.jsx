@@ -1,18 +1,28 @@
 import * as React from 'react';
-import { Box, Typography, Container, TextField, Button, Paper, Skeleton, Stack, Alert, Chip, IconButton, Divider, Grid } from '@mui/material';
+import {
+    Box, Typography, Container, TextField, Button, Paper, Skeleton,
+    Stack, Alert, Chip, IconButton, Divider, Grid
+} from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import useApi from "../hooks/api";
-import {useAlert} from "../Components/Context/AlertContext";
+import { useAlert } from "../Components/Context/AlertContext";
 
 const ComplaintSkeleton = () => (
-    <Paper sx={{ p: 4, borderRadius: 2, width: '100%', maxWidth: '1200px' }}>
-        <Stack spacing={2}>
+    <Paper sx={{ p: 4, borderRadius: 2, width: '100%', maxWidth: '900px', mx: 'auto' }}>
+        <Stack spacing={3}>
             <Skeleton variant="text" sx={{ fontSize: '2rem' }} width="60%" />
-            <Skeleton variant="rectangular" height={40} />
-            <Skeleton variant="rectangular" height={40} />
-            <Skeleton variant="rectangular" height={40} />
-            <Skeleton variant="rectangular" height={40} />
+            <Box sx={{ display: 'flex', gap: 3 }}>
+                <Skeleton variant="rectangular" height={50} width="33%" />
+                <Skeleton variant="rectangular" height={50} width="33%" />
+                <Skeleton variant="rectangular" height={50} width="33%" />
+            </Box>
+            <Box sx={{ display: 'flex', gap: 3 }}>
+                <Skeleton variant="rectangular" height={50} width="33%" />
+                <Skeleton variant="rectangular" height={50} width="33%" />
+                <Skeleton variant="rectangular" height={50} width="33%" />
+            </Box>
+            <Skeleton variant="rectangular" height={180} />
         </Stack>
     </Paper>
 );
@@ -21,55 +31,61 @@ const ComplaintDetails = ({ denuncia, onBack }) => {
     const theme = useTheme();
     const statusColors = {
         'Pendente': 'warning',
-        'Em Análise': 'info',
-        'Resolvido': 'success',
-        'Arquivado': 'default',
+        'Em Andamento': 'info',
+        'Concluída': 'success',
+        'Cancelada': 'error',
     };
 
     return (
-        <Container maxWidth={false} sx={{ px: { xs: 2, md: 6 } }}>
-            <Paper sx={{ p: { xs: 2, sm: 4 }, borderRadius: 2, textAlign: 'center', maxWidth: '1400px', mx: 'auto' }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
-                    <IconButton onClick={onBack} sx={{ mr: 1 }}>
-                        <ArrowBackIcon />
-                    </IconButton>
-                    <Typography variant="h5" fontWeight="bold">
-                        Detalhes da Denúncia
-                    </Typography>
-                </Box>
-                <Divider sx={{ mb: 3 }} />
-                <Grid container spacing={3}>
-                    <Grid item xs={12} md={6}>
-                        <Typography variant="subtitle2" color="text.secondary" fontWeight="bold">Protocolo</Typography>
-                        <Typography variant="h6">{denuncia.protocolo_codigo}</Typography>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Typography variant="subtitle2" color="text.secondary" fontWeight="bold">Status</Typography>
-                        <Chip label={denuncia.status_nome} color={statusColors[denuncia.status_nome] || 'default'} />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Typography variant="subtitle2" color="text.secondary" fontWeight="bold">Tipo de Ocorrência</Typography>
-                        <Typography>{denuncia.ocorrencia_nome}</Typography>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Typography variant="subtitle2" color="text.secondary" fontWeight="bold">Órgão Responsável</Typography>
-                        <Typography>{denuncia.orgao_nome}</Typography>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Typography variant="subtitle2" color="text.secondary" fontWeight="bold">Data da Ocorrência</Typography>
-                        <Typography>{new Date(denuncia.data_hora).toLocaleString('pt-BR')}</Typography>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Typography variant="subtitle2" color="text.secondary" fontWeight="bold">Localização</Typography>
-                        <Typography>{denuncia.localizacao}</Typography>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Typography variant="subtitle2" color="text.secondary" fontWeight="bold">Descrição</Typography>
-                        <Typography>{denuncia.descricao}</Typography>
-                    </Grid>
+        <Paper sx={{ p: { xs: 2, sm: 4 }, borderRadius: 2, width: '100%', maxWidth: '1000px', mx: 'auto' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
+                <IconButton onClick={onBack} sx={{ mr: 1 }}>
+                    <ArrowBackIcon />
+                </IconButton>
+                <Typography variant="h5" fontWeight="bold">
+                    Detalhes da Denúncia
+                </Typography>
+            </Box>
+            <Divider sx={{ mb: 3 }} />
+            <Grid container spacing={4}>
+                <Grid item xs={12} md={4}>
+                    <Typography variant="subtitle2" color="text.secondary" fontWeight="bold">Protocolo</Typography>
+                    <Typography variant="h6">{denuncia.protocolo_codigo}</Typography>
                 </Grid>
-            </Paper>
-        </Container>
+                <Grid item xs={12} md={4}>
+                    <Typography variant="subtitle2" color="text.secondary" fontWeight="bold">Status</Typography>
+                    <Chip label={denuncia.status_nome} color={statusColors[denuncia.status_nome] || 'default'} />
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <Typography variant="subtitle2" color="text.secondary" fontWeight="bold">Tipo de Ocorrência</Typography>
+                    <Typography>{denuncia.ocorrencia_nome}</Typography>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <Typography variant="subtitle2" color="text.secondary" fontWeight="bold">Órgão Responsável</Typography>
+                    <Typography>{denuncia.orgao_nome}</Typography>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <Typography variant="subtitle2" color="text.secondary" fontWeight="bold">Data da Ocorrência</Typography>
+                    <Typography>{new Date(denuncia.data_hora).toLocaleString('pt-BR')}</Typography>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <Typography variant="subtitle2" color="text.secondary" fontWeight="bold">Localização</Typography>
+                    <Typography>{denuncia.localizacao}</Typography>
+                </Grid>
+            </Grid>
+
+            <Box sx={{ mt: 5 }}>
+                <Typography variant="subtitle2" color="text.secondary" fontWeight="bold" sx={{ mb: 1 }}>Descrição</Typography>
+                <TextField
+                    multiline
+                    value={denuncia.descricao}
+                    variant="outlined"
+                    fullWidth
+                    InputProps={{ readOnly: true }}
+                    sx={{ width: '100%' }}
+                />
+            </Box>
+        </Paper>
     );
 };
 
@@ -80,25 +96,26 @@ export default function AcompanharDenunciaPage() {
     const [denuncia, setDenuncia] = React.useState(null);
     const [error, setError] = React.useState(null);
     const theme = useTheme();
+
     const handleTrackComplaint = async (event) => {
         event.preventDefault();
         if (!protocolNumber) return;
-        setDenuncia(null);
         setError(null);
         try {
             alert('Buscando denúncia...');
             const response = await get(`denuncia/procolo?protocolo=${protocolNumber}`);
             if (response && response.length > 0) {
                 setDenuncia(response[0]);
-                alert('Denúncia encontrada com sucesso!', {type: 'success'});
+                alert('Denúncia encontrada com sucesso!', { type: 'success' });
             } else {
-                setError('Nenhuma denúncia encontrada com este protocolo. Verifique o número e tente novamente.');
-                alert('Nenhuma denúncia encontrada com este protocolo. Verifique o número e tente novamente.', {type: 'error'});
+                const errorMessage = 'Nenhuma denúncia encontrada com este protocolo. Verifique o número e tente novamente.';
+                setError(errorMessage);
+                alert(errorMessage, { type: 'error' });
             }
         } catch (err) {
-            console.error("Erro ao buscar denúncia:", err);
-            setError('Ocorreu um erro ao se comunicar com o servidor. Por favor, tente novamente mais tarde.');
-            alert('Ocorreu um erro ao se comunicar com o servidor. Por favor, tente novamente mais tarde.', {type: 'error'});
+            const errorMessage = 'Ocorreu um erro ao se comunicar com o servidor. Por favor, tente novamente mais tarde.';
+            setError(errorMessage);
+            alert(errorMessage, { type: 'error' });
         }
     };
 
@@ -109,23 +126,7 @@ export default function AcompanharDenunciaPage() {
     };
 
     const renderContent = () => {
-        if (loading) return <ComplaintSkeleton />;
-        if (error) {
-            return (
-                <>
-                    <Container maxWidth="lg">
-                        <Alert severity="error" action={
-                            <Button color="inherit" size="small" onClick={handleBackToSearch}>
-                                TENTAR NOVAMENTE
-                            </Button>
-                        }>
-                            {error}
-                        </Alert>
-                    </Container>
-                </>
-
-            );
-        }
+        if (loading && !denuncia) return <ComplaintSkeleton />;
         if (denuncia) return <ComplaintDetails denuncia={denuncia} onBack={handleBackToSearch} />;
         return (
             <Container maxWidth="sm">
@@ -136,6 +137,11 @@ export default function AcompanharDenunciaPage() {
                     <Typography variant="body1" sx={{ mb: 4 }}>
                         Digite o número do protocolo recebido para acompanhar o status da sua denúncia.
                     </Typography>
+                    {error && (
+                        <Alert severity="error" sx={{ mb: 3, textAlign: 'left' }}>
+                            {error}
+                        </Alert>
+                    )}
                     <form onSubmit={handleTrackComplaint}>
                         <TextField
                             fullWidth
@@ -145,28 +151,22 @@ export default function AcompanharDenunciaPage() {
                             onChange={(e) => setProtocolNumber(e.target.value)}
                             placeholder="Ex: DEN-X-YYYYYY"
                             sx={{ mb: 3 }}
+                            error={!!error}
                         />
-                        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                            <Button
-                                type="submit"
-                                variant="contained"
-                                disabled={loading}
-                                sx={{
-                                    fontWeight: 'bold',
-                                    px: 4,
-                                    py: 1.5,
-                                    borderRadius: 2,
-                                    textTransform: 'none',
-                                    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                                    '&:hover': {
-                                        transform: 'scale(1.03)',
-                                        boxShadow: theme.shadows[6],
-                                    },
-                                }}
-                            >
-                                Verificar
-                            </Button>
-                        </Box>
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            disabled={loading}
+                            fullWidth
+                            sx={{
+                                fontWeight: 'bold',
+                                py: 1.5,
+                                borderRadius: 2,
+                                textTransform: 'none',
+                            }}
+                        >
+                            Verificar
+                        </Button>
                     </form>
                 </Paper>
             </Container>
