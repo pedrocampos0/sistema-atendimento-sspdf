@@ -43,19 +43,40 @@ export default function HomePage() {
             to="/fazer-denuncia"
             sx={{
               mt: 3,
-              backgroundColor: theme.palette.primary.main, 
+              backgroundColor: theme.palette.primary.main,
               fontWeight: 'bold',
               px: 4,
               py: 1.5,
               transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
               '&:hover': {
-                backgroundColor: theme.palette.primary.dark, 
+                backgroundColor: theme.palette.primary.dark,
                 transform: 'scale(1.05)',
                 boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.4)',
               },
             }}
           >
             Fazer uma denúncia
+          </Button>
+          <Button
+          variant="contained"
+          component={Link}
+          to="/acompanhar-denuncia"
+          sx={{
+            ml: 2,
+            mt: 3,
+            backgroundColor: theme.palette.secondary.dark,
+            fontWeight: 'bold',
+            px: 4,
+            py: 1.5,
+            transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+            '&:hover': {
+              backgroundColor: theme.palette.secondary.light,
+              transform: 'scale(1.05)',
+              boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.4)',
+            },
+          }}
+          >
+            Buscar uma denúncia
           </Button>
         </Paper>
       </Container>
